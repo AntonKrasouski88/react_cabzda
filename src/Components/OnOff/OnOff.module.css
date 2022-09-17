@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.onBlockActive {
+    margin: 2px;
+    border: solid;
+    height: 20px;
+    width: 50px;
+    background-color: green;
+}
+.onBlock {
+    margin: 2px;
+    border: solid;
+    height: 20px;
+    width: 50px;
+    background-color: white;
+}
+
+.circleGreen {
+    margin-top: 2px;
+    border: solid;
+    background-color: green;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+}
+.circleRed {
+    margin-top: 2px;
+    border: solid;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+}
+.offBlockActive {
+    margin: 2px;
+    border: solid;
+    height: 20px;
+    width: 50px;
+    background-color: red;
+}
