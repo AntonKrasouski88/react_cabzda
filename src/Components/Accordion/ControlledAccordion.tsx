@@ -9,24 +9,23 @@ function ControlledAccordion(props: ControlledAccordionPropsType) {
         border: 'solid 1px black'
     }
     const [onOffMenu, setOnOffMenu] = useState<boolean>(false)
+    const onClickHandler = ()=> setOnOffMenu(!onOffMenu)
 
-    const onClickHandler = ()=> !onOffMenu ? setOnOffMenu(true): setOnOffMenu(false)
     return <div style={style}>
-        <AccordionTitle title={props.titleValue}/><button onClick={onClickHandler}>collapse</button>
+        <AccordionTitle onClick = {onClickHandler} title={props.titleValue}/>
         {onOffMenu && <AccordionBody/>}
     </div>
 }
 
 type AccordionTitlePropsType = {
     title: string;
+    onClick: ()=>void
 }
 
 let AccordionTitle = (props: AccordionTitlePropsType) => {
-    console.log("AccordionTitle rendering")
-    return <h3> {props.title} </h3>
+    return <h3 onClick={props.onClick}> {props.title} </h3>
 }
 let AccordionBody = () => {
-    console.log("AccordionBody rendering")
     return <div>
         <ul>
             <li>1</li>
