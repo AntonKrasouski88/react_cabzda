@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
-type ControlledAccordionPropsType = {
+type UncontrolledAccordionPropsType = {
     titleValue: string;
 }
 
-function ControlledAccordion(props: ControlledAccordionPropsType) {
+function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
     const style = {
         border: 'solid 1px black'
     }
@@ -35,4 +35,4 @@ let AccordionBody = () => {
     </div>
 }
 
-export default ControlledAccordion
+export default UncontrolledAccordion
