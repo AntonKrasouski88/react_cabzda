@@ -5,14 +5,14 @@ import {Rating, RatingType} from "./Components/Rating/Rating";
 import {OnOff} from "./Components/OnOff/OnOff"
 import UncontrolledAccordion from "./Components/Accordion/UncontrolledAccordion";
 import {UncontrolledRating} from './Components/Rating/UnContolledRating'
+import {ControledOnOff} from './Components/OnOff/ContoledOnOff'
 
 
 function App() {
 
     const [statusRating, setStatusRating] = useState<RatingType>(0);
     const [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(false);
-
- 
+    const [conditionOnOff,setConditionOnOff] = useState<boolean>(false);
 
     return (
         <div className={'App'}>
@@ -25,6 +25,9 @@ function App() {
                         changeCollapsed = {setCollapsedAccordion} />
             <UncontrolledAccordion titleValue={'Menu control'}/>
             <UncontrolledRating/>
+            <ControledOnOff 
+                condition = {conditionOnOff}
+                changeConditione = {setConditionOnOff}/>
             <OnOff />
             <OnOff />
         </div>
