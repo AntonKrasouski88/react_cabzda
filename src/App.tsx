@@ -4,7 +4,7 @@ import Accordion from "./Components/Accordion/Accordion";
 import {Rating, RatingType} from "./Components/Rating/Rating";
 import {OnOff} from "./Components/OnOff/OnOff"
 import UncontrolledAccordion from "./Components/Accordion/UncontrolledAccordion";
-import {UncontrolledRating} from './Components/Rating/UnContolledRating'
+import {UncontrolledRating} from './Components/Rating/UncontolledRating'
 import {ControledOnOff} from './Components/OnOff/ContoledOnOff'
 
 
@@ -18,14 +18,14 @@ function App() {
         <div className={'App'}>
             <PageTitle title = "This is App component"/>
             <PageTitle title = "Hello User"/>
-            <Rating value = {statusRating} 
+            <Rating value = {statusRating}
                     changeRating = {setStatusRating}/>
-            <Accordion titleValue = {"Menu"} 
-                        collapsed = {collapsedAccordion}
-                        changeCollapsed = {setCollapsedAccordion} />
+            <Accordion titleValue = {"Menu"}
+                       collapsed = {collapsedAccordion}
+                       changeCollapsed = {setCollapsedAccordion} />
             <UncontrolledAccordion titleValue={'Menu control'}/>
             <UncontrolledRating/>
-            <ControledOnOff 
+            <ControledOnOff
                 condition = {conditionOnOff}
                 changeConditione = {setConditionOnOff}/>
             <OnOff />
@@ -44,3 +44,4 @@ let PageTitle = (props: PageTitlePropsType) => {
 console.log("PageTitle rendering")
 
 export default App;
+
