@@ -52,3 +52,5 @@ let Star = (props: StarPropsType) => {
     }
    return <span style = {styleStar} onClick = {()=>props.changeRating(props.value)}>{props.selected ? <b> Star </b>: 'Star'}</span>
 }
+
+//"../src/**/*.stories.mdx",

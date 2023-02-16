@@ -6,13 +6,20 @@ import {OnOff} from "./Components/OnOff/OnOff"
 import UncontrolledAccordion from "./Components/Accordion/UncontrolledAccordion";
 import {UncontrolledRating} from './Components/Rating/UncontolledRating'
 import {ControledOnOff} from './Components/OnOff/ContoledOnOff'
+import Input from './Components/Input/Input';
+import Select from './Components/Selecte/Select';
 
-
+export type ItemType ={
+    id: number,
+    city: string,
+}
 function App() {
-
+    
     const [statusRating, setStatusRating] = useState<RatingType>(0);
     const [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(false);
     const [conditionOnOff,setConditionOnOff] = useState<boolean>(false);
+    const itemsSelect: ItemType[] = [{id: 1, city: 'Minsk'}, {id: 2, city: 'Brest'}, {id:3, city: 'Grodno'}]
+    const [value, setValue] = useState('None');
 
     return (
         <div className={'App'}>
@@ -30,6 +37,8 @@ function App() {
                 changeConditione = {setConditionOnOff}/>
             <OnOff />
             <OnOff />
+            <Input />
+            <Select items={itemsSelect} value = {value} onChangeValue={setValue}/>
         </div>
     );
 }
