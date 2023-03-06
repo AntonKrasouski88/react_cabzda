@@ -17,28 +17,38 @@ function App() {
     
     const [statusRating, setStatusRating] = useState<RatingType>(0);
     const [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(false);
-    const [conditionOnOff,setConditionOnOff] = useState<boolean>(false);
+    const [statusOnOff,setStatusnOnOff] = useState<boolean>(false);
     const itemsSelect: ItemType[] = [{id: 1, city: 'Minsk'}, {id: 2, city: 'Brest'}, {id:3, city: 'Grodno'}]
     const [value, setValue] = useState('None');
 
+    const PageTitleMemo = React.memo(PageTitle);
+    const RatingMemo = React.memo(Rating);
+    const AccordionMemo = React.memo(Accordion);
+    const UncontrolledAccordionMemo = React.memo(UncontrolledAccordion);
+    const UncontrolledRatingMemo = React.memo(UncontrolledRating)
+    const ControledOnOffMemo = React.memo(ControledOnOff);
+    const OnOffMemo = React.memo(OnOff);
+    const InputMemo = React.memo(Input);
+    const SelectMemo = React.memo(Select);
+
     return (
         <div className={'App'}>
-            <PageTitle title = "This is App component"/>
-            <PageTitle title = "Hello User"/>
-            <Rating value = {statusRating}
+            <PageTitleMemo title = "This is App component"/>
+            <PageTitleMemo title = "Hello User"/>
+            <RatingMemo value = {statusRating}
                     changeRating = {setStatusRating}/>
-            <Accordion titleValue = {"Menu"}
+            <AccordionMemo titleValue = {"Menu"}
                        collapsed = {collapsedAccordion}
                        changeCollapsed = {setCollapsedAccordion} />
-            <UncontrolledAccordion titleValue={'Menu control'}/>
-            <UncontrolledRating/>
-            <ControledOnOff
-                condition = {conditionOnOff}
-                changeConditione = {setConditionOnOff}/>
-            <OnOff />
-            <OnOff />
-            <Input />
-            <Select items={itemsSelect} value = {value} onChangeValue={setValue}/>
+            <UncontrolledAccordionMemo titleValue={'Menu control'}/>
+            <UncontrolledRatingMemo/>
+            <ControledOnOffMemo
+                status = {statusOnOff}
+                changestatus={setStatusnOnOff}/>
+            <OnOffMemo />
+            <OnOffMemo />
+            <InputMemo />
+            <SelectMemo items={itemsSelect} value = {value} onChangeValue={setValue}/>
         </div>
     );
 }
